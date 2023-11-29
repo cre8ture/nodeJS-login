@@ -65,6 +65,46 @@ Before you begin, ensure you have met the following requirements:
     ```
 3. Your application should now be running on the defined port.
 
+
+## Running the Project with Docker (Alternative)
+
+### Prerequisites
+- **Docker**: Ensure that Docker and Docker Compose are installed on your machine. If not, you can download and install Docker from [Docker's official website](https://www.docker.com/get-started).
+
+### Steps to Run
+
+1. **Clone the Repository**:
+   - If you haven't already, clone the repository to your local machine. Use the following command:
+     ```bash
+     git clone https://github.com/yourusername/loginpagebark.git
+     cd loginpagebark
+     ```
+
+2. **Start Docker Containers**:
+   - Run the following command in the root directory of the project to start the Node.js application and MySQL services defined in the `docker-compose.yml` file:
+     ```bash
+     docker-compose up
+     ```
+   - This command will download the necessary Docker images, build your application, and start the services (Node.js app and MySQL).
+
+3. **Accessing the Application**:
+   - Once the containers are up and running, your application should be accessible via a web browser at `http://localhost:3000`.
+   - MySQL will be running in its container and can be accessed on the default MySQL port (3306).
+
+4. **Stopping the Containers**:
+   - When you're done, you can stop the Docker containers by running:
+     ```bash
+     docker-compose down
+     ```
+   - This command stops and removes the containers, networks, and volumes created by `docker-compose up`.
+
+### Note
+- The first time you run `docker-compose up`, it might take a bit of time as Docker needs to download the base images and build your application image.
+- Ensure that the ports specified in the `docker-compose.yml` file (e.g., 3000 for the app, 3306 for MySQL) are available on your machine.
+- Modifications to the environment variables or the database schema may require adjustments in the `.env` file or `docker-compose.yml` file.
+- If you encounter any issues with the Docker containers, check the container logs for more information.
+
+
 ## Contributing to splat! login
 <!-- Contribution guidelines -->
 - please use this as you please
